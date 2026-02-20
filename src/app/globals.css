@@ -1,26 +1,162 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ══════════ Minecraft Portfolio – Global Styles ══════════ */
 
+/* ---------- Theme Tokens (Tailwind v4 @theme) ---------- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-mc-dirt: #8b6914;
+  --color-mc-dirt-dark: #6b4f10;
+  --color-mc-grass: #5d9b37;
+  --color-mc-grass-dark: #3e7a22;
+  --color-mc-stone: #7f7f7f;
+  --color-mc-stone-dark: #5a5a5a;
+  --color-mc-gold: #ffaa00;
+  --color-mc-xp-green: #80ff20;
+  --color-mc-xp-bg: #1b1b1b;
+  --color-mc-sky-top: #7ba4d8;
+  --color-mc-sky-bottom: #b3d4fc;
+  --color-mc-gui-bg: #c6c6c6;
+  --color-mc-gui-border-light: #ffffff;
+  --color-mc-gui-border-dark: #555555;
+  --color-mc-gui-slot: #8b8b8b;
+  --color-mc-hotbar-bg: #1a1a1a;
+  --color-mc-tooltip-bg: #100010;
+  --color-mc-text: #ffffff;
+  --color-mc-text-shadow: #3f3f3f;
+  --color-mc-dark: #1d1d1d;
+  --color-mc-red: #ff5555;
+  --color-mc-green: #55ff55;
+  --color-mc-aqua: #55ffff;
+  --color-mc-yellow: #ffff55;
+  --color-mc-purple: #aa00aa;
+  --color-mc-enchant: #a855f7;
+  --font-minecraft: "Press Start 2P", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ---------- Base ---------- */
+:root {
+  --background: #1a1a2e;
+  --foreground: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-minecraft);
+  overflow-x: hidden;
+}
+
+/* ---------- Custom Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border: 2px solid #1a1a1a;
+}
+
+/* ---------- Pixel Border Utility ---------- */
+.pixel-border {
+  border: 4px solid;
+  border-color: var(--color-mc-gui-border-light) var(--color-mc-gui-border-dark) var(--color-mc-gui-border-dark) var(--color-mc-gui-border-light);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255,255,255,0.15),
+    inset -2px -2px 0 rgba(0,0,0,0.3);
+}
+
+.pixel-border-dark {
+  border: 4px solid;
+  border-color: var(--color-mc-gui-border-dark) var(--color-mc-gui-border-light) var(--color-mc-gui-border-light) var(--color-mc-gui-border-dark);
+  box-shadow:
+    inset 2px 2px 0 rgba(0,0,0,0.3),
+    inset -2px -2px 0 rgba(255,255,255,0.15);
+}
+
+/* ---------- Minecraft Tooltip ---------- */
+.mc-tooltip {
+  background: var(--color-mc-tooltip-bg);
+  border: 2px solid;
+  border-color: #5000a0 #28007f #28007f #5000a0;
+  outline: 2px solid #100010;
+  padding: 4px 8px;
+  font-size: 10px;
+  line-height: 1.4;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ---------- Achievement Toast ---------- */
+@keyframes achievementSlide {
+  0% { transform: translateY(-120%); opacity: 0; }
+  15% { transform: translateY(0); opacity: 1; }
+  85% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120%); opacity: 0; }
+}
+
+.achievement-toast {
+  animation: achievementSlide 4s ease-in-out forwards;
+}
+
+/* ---------- Enchant Shimmer ---------- */
+@keyframes enchantShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.enchant-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(168, 85, 247, 0.3) 25%,
+    rgba(168, 85, 247, 0.6) 50%,
+    rgba(168, 85, 247, 0.3) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: enchantShimmer 3s linear infinite;
+}
+
+/* ---------- Level Up Animation ---------- */
+@keyframes levelUpBurst {
+  0% { transform: scale(0.5); opacity: 1; }
+  50% { transform: scale(1.8); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.level-up-burst {
+  animation: levelUpBurst 1.2s ease-out forwards;
+}
+
+/* ---------- Dirt Texture Pattern (CSS) ---------- */
+.dirt-pattern {
+  background-color: #8b6914;
+  background-image:
+    radial-gradient(ellipse 4px 3px at 10% 20%, #7a5c11 0%, transparent 100%),
+    radial-gradient(ellipse 5px 4px at 30% 60%, #725510 0%, transparent 100%),
+    radial-gradient(ellipse 3px 3px at 50% 30%, #9a7518 0%, transparent 100%),
+    radial-gradient(ellipse 4px 5px at 70% 70%, #6b4f10 0%, transparent 100%),
+    radial-gradient(ellipse 5px 3px at 90% 40%, #7a5c11 0%, transparent 100%),
+    radial-gradient(ellipse 3px 4px at 20% 80%, #9a7518 0%, transparent 100%),
+    radial-gradient(ellipse 4px 4px at 60% 10%, #6b4f10 0%, transparent 100%),
+    radial-gradient(ellipse 3px 3px at 80% 90%, #725510 0%, transparent 100%);
+  background-size: 64px 64px;
+}
+
+/* ---------- Grass Strip ---------- */
+.grass-strip {
+  background: linear-gradient(180deg, #4caf50 0%, #388e3c 40%, #2e7d32 100%);
+  image-rendering: pixelated;
+}
+
+/* ---------- Cloud Animation ---------- */
+@keyframes cloudDrift {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
 }
