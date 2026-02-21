@@ -56,7 +56,7 @@ export default function Home() {
         <DirtFooter />
 
         {/* Fixed UI Layer - moved to bottom of DOM for better z-index stacking */}
-        <ChatLog />
+        {/* <ChatLog /> */}
         <Hotbar />
         <XPBar />
       </main>

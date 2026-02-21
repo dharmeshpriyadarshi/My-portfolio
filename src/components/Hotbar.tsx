@@ -121,30 +121,38 @@ export default function Hotbar() {
 
                         {/* Slot */}
                         <motion.button
-                            whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            animate={
-                                hoveredSlot === idx
-                                    ? {
-                                        rotate: [0, -3, 3, -3, 0],
-                                        transition: { duration: 0.4, repeat: Infinity },
-                                    }
-                                    : { rotate: 0 }
-                            }
                             onClick={() => handleClick(idx)}
                             onMouseEnter={() => setHoveredSlot(idx)}
                             onMouseLeave={() => setHoveredSlot(null)}
                             className={`
                 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center cursor-pointer
-                transition-all duration-100
+                transition-colors duration-100
                 ${activeSlot === idx
                                     ? "bg-[#8b8b8b] border-2 border-white/80"
                                     : "bg-[#555] border-2 border-[#333]"
                                 }
               `}
-                            style={{ imageRendering: "pixelated" }}
+                            style={{ imageRendering: "pixelated", perspective: "400px" }}
                         >
-                            {item.icon}
+                            <motion.div
+                                animate={
+                                    hoveredSlot === idx
+                                        ? { y: [0, -6, 0], rotateY: [0, 360] }
+                                        : { y: 0, rotateY: 0 }
+                                }
+                                transition={
+                                    hoveredSlot === idx
+                                        ? {
+                                            y: { duration: 0.6, repeat: Infinity, ease: "easeInOut" },
+                                            rotateY: { duration: 2, repeat: Infinity, ease: "linear" },
+                                        }
+                                        : { duration: 0.3 }
+                                }
+                                style={{ transformStyle: "preserve-3d" }}
+                            >
+                                {item.icon}
+                            </motion.div>
                         </motion.button>
 
                         {/* Slot number */}
