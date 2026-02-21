@@ -22,7 +22,7 @@ export default function Home() {
         {/* Scrollable Content */}
         <SkyboxHeader />
 
-        <div className="relative z-10" style={{ background: "#1a1a2e" }}>
+        <div className="relative" style={{ background: "#1a1a2e" }}>
           <CharacterMenu />
 
           {/* Section divider */}

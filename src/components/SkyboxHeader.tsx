@@ -74,7 +74,7 @@ export default function SkyboxHeader() {
                 transition={{ duration: 0.8, delay: 0.3 }}
             >
                 <h1 className="text-3xl md:text-5xl lg:text-6xl text-white drop-shadow-[2px_2px_0_#000] mb-6 leading-tight">
-                    Dharm&apos;s World
+                    Dharmesh Priyadarshi
                 </h1>
                 <motion.p
                     className="text-sm md:text-base text-yellow-300 drop-shadow-[1px_1px_0_#000] max-w-[600px] mx-auto leading-relaxed"

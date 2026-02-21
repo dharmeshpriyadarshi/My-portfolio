@@ -255,7 +255,7 @@ export default function AdvancementTree() {
                 </p>
 
                 {/* Tree container */}
-                <div ref={treeRef} className="relative w-full overflow-x-auto">
+                <div ref={treeRef} className="relative w-full overflow-x-auto pb-40">
                     {/* SVG connection lines */}
                     <svg
                         width={svgW}

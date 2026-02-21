@@ -12,9 +12,9 @@ export default function DirtFooter() {
                     {/* Wooden sign links */}
                     <div className="flex flex-wrap justify-center gap-6">
                         {[
-                            { label: "GitHub", url: "https://github.com" },
-                            { label: "LinkedIn", url: "https://linkedin.com" },
-                            { label: "Email", url: "mailto:hello@example.com" },
+                            { label: "GitHub", url: "https://github.com/dharmeshpriyadarshi" },
+                            { label: "LinkedIn", url: "http://www.linkedin.com/in/dharmesh-priyadarshi" },
+                            { label: "Email", url: "mailto:dharmeshoff016@gmail.com" },
                         ].map((link) => (
                             <a
                                 key={link.label}
