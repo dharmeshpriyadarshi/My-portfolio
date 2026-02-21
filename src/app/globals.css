@@ -39,6 +39,42 @@
   --foreground: #ffffff;
 }
 
+.theme-nether {
+  --color-mc-dirt: #4a0404;
+  --color-mc-dirt-dark: #2e0202;
+  --color-mc-grass: #5e0505;
+  --color-mc-grass-dark: #3a0303;
+  --color-mc-stone: #422;
+  --color-mc-stone-dark: #211;
+  --color-mc-xp-green: #ff6600;
+  --color-mc-xp-bg: #220000;
+  --color-mc-sky-top: #2b0000;
+  --color-mc-sky-bottom: #4d0000;
+  --color-mc-gui-bg: #8c4a4a;
+  --color-mc-gui-border-light: #ffaaaa;
+  --color-mc-gui-border-dark: #4a1a1a;
+  --color-mc-gui-slot: #602a2a;
+  --background: #2b0000;
+}
+
+.theme-end {
+  --color-mc-dirt: #111116;
+  --color-mc-dirt-dark: #0a0a0d;
+  --color-mc-grass: #181c20;
+  --color-mc-grass-dark: #101216;
+  --color-mc-stone: #222;
+  --color-mc-stone-dark: #111;
+  --color-mc-xp-green: #d155ff;
+  --color-mc-xp-bg: #110011;
+  --color-mc-sky-top: #09000f;
+  --color-mc-sky-bottom: #140026;
+  --color-mc-gui-bg: #261b26;
+  --color-mc-gui-border-light: #443344;
+  --color-mc-gui-border-dark: #140d14;
+  --color-mc-gui-slot: #1c141c;
+  --background: #09000f;
+}
+
 html {
   scroll-behavior: smooth;
 }

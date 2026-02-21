@@ -1,6 +1,10 @@
 "use client";
 
+import { useTheme } from "@/context/ThemeContext";
+
 export default function DirtFooter() {
+    const { dimension, cycleDimension } = useTheme();
+
     return (
         <footer className="relative w-full">
             {/* Grass strip */}
@@ -33,9 +37,17 @@ export default function DirtFooter() {
                         ))}
                     </div>
 
-                    <p className="text-center mt-8 text-[8px] text-white/50 drop-shadow-[1px_1px_0_#000]">
-                        © 2026 Dharm&apos;s Portfolio — Crafted with ❤ and blocks
-                    </p>
+                    <div className="mt-8 flex flex-col md:flex-row items-center justify-between text-[8px] text-white/50 drop-shadow-[1px_1px_0_#000]">
+                        <p>
+                            © 2026 Dharm&apos;s Portfolio — Crafted with ❤ and blocks
+                        </p>
+                        <button
+                            onClick={cycleDimension}
+                            className="mt-4 md:mt-0 hover:text-white transition-colors cursor-pointer"
+                        >
+                            Seed: 16112002 [{dimension}]
+                        </button>
+                    </div>
                 </div>
             </div>
         </footer>
