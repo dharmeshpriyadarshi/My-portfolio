@@ -13,6 +13,9 @@ export interface Project {
     description: string;
     techStack: string[];
     github?: string;
+    mob: string;
+    mobIcon: string;
+    loot: string[];
 }
 
 const RARITY_COLORS: Record<string, string> = {
@@ -32,6 +35,9 @@ const PROJECTS: Project[] = [
         description: "High-performance data processing engine built in C++ for real-time analytics. Handles millions of events per second.",
         techStack: ["C++", "CMake", "gRPC", "Protobuf"],
         github: "https://github.com",
+        mob: "Lag Ghast",
+        mobIcon: "👻",
+        loot: ["Throughput: 2M events/sec", "Latency reduced by 60%", "Zero-downtime processing"],
     },
     {
         id: "p2",
@@ -41,6 +47,9 @@ const PROJECTS: Project[] = [
         description: "Automated cloud deployment pipeline with infrastructure-as-code. Multi-region, auto-scaling architecture.",
         techStack: ["AWS", "Terraform", "Docker", "Python"],
         github: "https://github.com",
+        mob: "Configuration Phantom",
+        mobIcon: "👁️",
+        loot: ["Deploy time: 30min → 3min", "99.99% uptime SLA", "Infra-as-code coverage: 100%"],
     },
     {
         id: "p3",
@@ -50,6 +59,9 @@ const PROJECTS: Project[] = [
         description: "Full-stack web application with real-time collaboration features and responsive design.",
         techStack: ["React", "Node.js", "PostgreSQL", "WebSocket"],
         github: "https://github.com",
+        mob: "Spaghetti Code Creeper",
+        mobIcon: "💥",
+        loot: ["Real-time multi-user editing", "60fps responsive UI", "100% test coverage"],
     },
     {
         id: "p4",
@@ -59,6 +71,9 @@ const PROJECTS: Project[] = [
         description: "End-to-end machine learning pipeline for predictive analytics with automated model training and deployment.",
         techStack: ["Python", "TensorFlow", "Kubernetes", "MLflow"],
         github: "https://github.com",
+        mob: "Overfitting Enderman",
+        mobIcon: "🟣",
+        loot: ["Model accuracy: 94%", "Auto-retraining pipeline", "Inference latency < 50ms"],
     },
     {
         id: "p5",
@@ -68,6 +83,9 @@ const PROJECTS: Project[] = [
         description: "Cross-platform mobile application with offline-first architecture and native performance.",
         techStack: ["Java", "Kotlin", "Firebase", "SQLite"],
         github: "https://github.com",
+        mob: "Null Pointer Zombie",
+        mobIcon: "🧟",
+        loot: ["Offline-first architecture", "Cross-platform parity", "4.5★ app store rating"],
     },
     {
         id: "p6",
@@ -77,6 +95,9 @@ const PROJECTS: Project[] = [
         description: "Custom 2D game engine with physics simulation, particle systems, and sprite rendering.",
         techStack: ["C++", "OpenGL", "SDL2", "Lua"],
         github: "https://github.com",
+        mob: "Memory Leak Wither",
+        mobIcon: "💀",
+        loot: ["60fps physics sim", "Custom particle engine", "Lua scripting hotreload"],
     },
     {
         id: "p7",
@@ -86,6 +107,9 @@ const PROJECTS: Project[] = [
         description: "Microservices API gateway with rate limiting, authentication, and request routing.",
         techStack: ["Go", "Redis", "Docker", "Nginx"],
         github: "https://github.com",
+        mob: "DDoS Blaze",
+        mobIcon: "🔥",
+        loot: ["10K req/s rate limiting", "JWT auth with refresh", "Sub-5ms routing"],
     },
     {
         id: "p8",
@@ -95,6 +119,9 @@ const PROJECTS: Project[] = [
         description: "Developer productivity CLI tool for automating repetitive tasks and project scaffolding.",
         techStack: ["Rust", "Clap", "Tokio"],
         github: "https://github.com",
+        mob: "Boilerplate Slime",
+        mobIcon: "🟢",
+        loot: ["Scaffold in < 5 sec", "100+ templates", "Async task runner"],
     },
     {
         id: "p9",
@@ -104,6 +131,9 @@ const PROJECTS: Project[] = [
         description: "Admin dashboard with real-time data visualization, charts, and monitoring widgets.",
         techStack: ["TypeScript", "Next.js", "Chart.js", "Tailwind"],
         github: "https://github.com",
+        mob: "Callback Skeleton",
+        mobIcon: "💀",
+        loot: ["Real-time WebSocket charts", "15+ widget types", "Role-based access"],
     },
 ];
 
