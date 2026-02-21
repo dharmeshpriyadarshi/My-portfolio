@@ -91,7 +91,7 @@ export default function SkyboxHeader() {
                     animate={{ opacity: [1, 0, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                    ▼ Scroll down to begin your adventure ▼
+                    Scroll down to begin your adventure
                 </motion.div>
             </motion.div>
 

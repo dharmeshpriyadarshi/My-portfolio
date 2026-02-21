@@ -10,15 +10,12 @@ import ChestInventory from "@/components/sections/ChestInventory";
 import CraftingTable from "@/components/sections/CraftingTable";
 import TimelineSection from "@/components/sections/TimelineSection";
 import AdvancementTree from "@/components/sections/AdvancementTree";
+import ChatLog from "@/components/ChatLog";
 
 export default function Home() {
   return (
     <XPProvider>
       <main className="relative min-h-screen">
-        {/* Fixed UI Layer */}
-        <Hotbar />
-        <XPBar />
-
         {/* Scrollable Content */}
         <SkyboxHeader />
 
@@ -52,6 +49,11 @@ export default function Home() {
         </div>
 
         <DirtFooter />
+
+        {/* Fixed UI Layer - moved to bottom of DOM for better z-index stacking */}
+        <ChatLog />
+        <Hotbar />
+        <XPBar />
       </main>
     </XPProvider>
   );
