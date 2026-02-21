@@ -7,7 +7,7 @@ import XPBar from "@/components/XPBar";
 import DirtFooter from "@/components/DirtFooter";
 import CharacterMenu from "@/components/sections/CharacterMenu";
 import ChestInventory from "@/components/sections/ChestInventory";
-import SkillsSection from "@/components/sections/SkillsSection";
+import CraftingTable from "@/components/sections/CraftingTable";
 import TimelineSection from "@/components/sections/TimelineSection";
 import AdvancementTree from "@/components/sections/AdvancementTree";
 
@@ -36,7 +36,7 @@ export default function Home() {
             <div className="h-[2px] bg-gradient-to-r from-transparent via-[--color-mc-gui-border-dark] to-transparent" />
           </div>
 
-          <SkillsSection />
+          <CraftingTable />
 
           <div className="max-w-3xl mx-auto px-8">
             <div className="h-[2px] bg-gradient-to-r from-transparent via-[--color-mc-gui-border-dark] to-transparent" />
