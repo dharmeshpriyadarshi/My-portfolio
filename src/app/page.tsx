@@ -19,33 +19,38 @@ export default function Home() {
         {/* Scrollable Content */}
         <SkyboxHeader />
 
-        <div className="relative" style={{ background: "#1a1a2e" }}>
-          <CharacterMenu />
-
-          {/* Section divider */}
-          <div className="max-w-3xl mx-auto px-8">
-            <div className="h-[2px] bg-gradient-to-r from-transparent via-[--color-mc-gui-border-dark] to-transparent" />
+        <div className="relative">
+          {/* ── Biome: The Plains (About) ── */}
+          <div className="biome-plains">
+            <CharacterMenu />
           </div>
 
-          <ChestInventory />
+          <div className="biome-transition plains-to-jungle" />
 
-          <div className="max-w-3xl mx-auto px-8">
-            <div className="h-[2px] bg-gradient-to-r from-transparent via-[--color-mc-gui-border-dark] to-transparent" />
+          {/* ── Biome: The Jungle (Projects) ── */}
+          <div className="biome-jungle">
+            <ChestInventory />
           </div>
 
-          <CraftingTable />
+          <div className="biome-transition jungle-to-stronghold" />
 
-          <div className="max-w-3xl mx-auto px-8">
-            <div className="h-[2px] bg-gradient-to-r from-transparent via-[--color-mc-gui-border-dark] to-transparent" />
+          {/* ── Biome: The Stronghold (Skills) ── */}
+          <div className="biome-stronghold">
+            <CraftingTable />
           </div>
 
-          <TimelineSection />
+          <div className="biome-transition stronghold-to-end" />
 
-          <div className="max-w-3xl mx-auto px-8">
-            <div className="h-[2px] bg-gradient-to-r from-transparent via-[--color-mc-gui-border-dark] to-transparent" />
+          {/* ── Biome: The End (Timeline & Advancements) ── */}
+          <div className="biome-end">
+            <TimelineSection />
+
+            <div className="max-w-3xl mx-auto px-8">
+              <div className="h-[2px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+            </div>
+
+            <AdvancementTree />
           </div>
-
-          <AdvancementTree />
         </div>
 
         <DirtFooter />

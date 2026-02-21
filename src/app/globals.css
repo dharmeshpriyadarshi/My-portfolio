@@ -54,9 +54,11 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #555;
   border: 2px solid #1a1a1a;
@@ -66,17 +68,17 @@ body {
 .pixel-border {
   border: 4px solid;
   border-color: var(--color-mc-gui-border-light) var(--color-mc-gui-border-dark) var(--color-mc-gui-border-dark) var(--color-mc-gui-border-light);
-  box-shadow: 
-    inset 2px 2px 0 rgba(255,255,255,0.15),
-    inset -2px -2px 0 rgba(0,0,0,0.3);
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.15),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.3);
 }
 
 .pixel-border-dark {
   border: 4px solid;
   border-color: var(--color-mc-gui-border-dark) var(--color-mc-gui-border-light) var(--color-mc-gui-border-light) var(--color-mc-gui-border-dark);
   box-shadow:
-    inset 2px 2px 0 rgba(0,0,0,0.3),
-    inset -2px -2px 0 rgba(255,255,255,0.15);
+    inset 2px 2px 0 rgba(0, 0, 0, 0.3),
+    inset -2px -2px 0 rgba(255, 255, 255, 0.15);
 }
 
 /* ---------- Minecraft Tooltip ---------- */
@@ -94,10 +96,25 @@ body {
 
 /* ---------- Achievement Toast ---------- */
 @keyframes achievementSlide {
-  0% { transform: translateY(-120%); opacity: 0; }
-  15% { transform: translateY(0); opacity: 1; }
-  85% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-120%); opacity: 0; }
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  85% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
 }
 
 .achievement-toast {
@@ -106,28 +123,42 @@ body {
 
 /* ---------- Enchant Shimmer ---------- */
 @keyframes enchantShimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .enchant-shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(168, 85, 247, 0.3) 25%,
-    rgba(168, 85, 247, 0.6) 50%,
-    rgba(168, 85, 247, 0.3) 75%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(168, 85, 247, 0.3) 25%,
+      rgba(168, 85, 247, 0.6) 50%,
+      rgba(168, 85, 247, 0.3) 75%,
+      transparent 100%);
   background-size: 200% 100%;
   animation: enchantShimmer 3s linear infinite;
 }
 
 /* ---------- Level Up Animation ---------- */
 @keyframes levelUpBurst {
-  0% { transform: scale(0.5); opacity: 1; }
-  50% { transform: scale(1.8); opacity: 1; }
-  100% { transform: scale(2.5); opacity: 0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 
 .level-up-burst {
@@ -157,6 +188,113 @@ body {
 
 /* ---------- Cloud Animation ---------- */
 @keyframes cloudDrift {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100vw); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* ══════════ Biome Zones ══════════ */
+
+/* Plains — warm green meadow for About/Character */
+.biome-plains {
+  background: linear-gradient(180deg, #2d5016 0%, #1a3a0e 50%, #1a2e10 100%);
+  position: relative;
+}
+
+.biome-plains::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80px 40px at 15% 80%, rgba(93, 155, 55, 0.15) 0%, transparent 100%),
+    radial-gradient(ellipse 60px 30px at 75% 60%, rgba(93, 155, 55, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Jungle — lush, deep green for Projects */
+.biome-jungle {
+  background: linear-gradient(180deg, #0f2b0a 0%, #132e0f 50%, #0a1f06 100%);
+  position: relative;
+}
+
+.biome-jungle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0px, transparent 60px, rgba(34, 139, 34, 0.06) 60px, rgba(34, 139, 34, 0.06) 62px),
+    repeating-linear-gradient(180deg, transparent 0px, transparent 40px, rgba(34, 139, 34, 0.04) 40px, rgba(34, 139, 34, 0.04) 42px);
+  pointer-events: none;
+}
+
+/* Stronghold — stone bricks for Skills/Crafting */
+.biome-stronghold {
+  background: linear-gradient(180deg, #1a1a2a 0%, #151520 50%, #111118 100%);
+  position: relative;
+}
+
+.biome-stronghold::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0px, transparent 48px, rgba(127, 127, 127, 0.05) 48px, rgba(127, 127, 127, 0.05) 50px),
+    repeating-linear-gradient(180deg, transparent 0px, transparent 48px, rgba(127, 127, 127, 0.05) 48px, rgba(127, 127, 127, 0.05) 50px);
+  pointer-events: none;
+}
+
+/* The End — purple void for Timeline & Advancements */
+.biome-end {
+  background: linear-gradient(180deg, #0d0015 0%, #15002a 50%, #0a0010 100%);
+  position: relative;
+}
+
+.biome-end::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle 2px at 20% 30%, rgba(200, 160, 255, 0.35) 0%, transparent 100%),
+    radial-gradient(circle 1px at 50% 70%, rgba(200, 160, 255, 0.25) 0%, transparent 100%),
+    radial-gradient(circle 2px at 80% 20%, rgba(200, 160, 255, 0.3) 0%, transparent 100%),
+    radial-gradient(circle 1px at 35% 85%, rgba(200, 160, 255, 0.2) 0%, transparent 100%),
+    radial-gradient(circle 1px at 65% 50%, rgba(200, 160, 255, 0.15) 0%, transparent 100%);
+  pointer-events: none;
+  animation: endParticles 8s ease-in-out infinite alternate;
+}
+
+@keyframes endParticles {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Biome transition strip */
+.biome-transition {
+  height: 8px;
+  position: relative;
+}
+
+.biome-transition.plains-to-jungle {
+  background: linear-gradient(180deg, #1a2e10, #0f2b0a);
+}
+
+.biome-transition.jungle-to-stronghold {
+  background: linear-gradient(180deg, #0a1f06, #1a1a2a);
+}
+
+.biome-transition.stronghold-to-end {
+  background: linear-gradient(180deg, #111118, #0d0015);
 }

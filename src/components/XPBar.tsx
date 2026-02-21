@@ -28,7 +28,7 @@ export default function XPBar() {
             </AnimatePresence>
 
             {/* XP Bar */}
-            <div className="fixed bottom-[68px] left-1/2 -translate-x-1/2 z-[100] w-[min(90vw,720px)]">
+            <div className="fixed bottom-[88px] md:bottom-[96px] left-1/2 -translate-x-1/2 z-[100] w-[min(90vw,720px)]">
                 {/* Level badge */}
                 <div className="flex justify-center mb-1">
                     <span className="text-[--color-mc-xp-green] text-[10px] drop-shadow-[0_1px_0_#000]">
